@@ -2,7 +2,7 @@
 
 This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
 
-# **app-test**
+# **blitz-tutorial-app**
 
 ## Getting Started
 
@@ -19,13 +19,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 Ensure the `.env.local` file has required environment variables:
 
 ```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/app-test
+DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/blitz-tutorial-app
 ```
 
 Ensure the `.env.test.local` file has required environment variables:
 
 ```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/app-test_test
+DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/blitz-tutorial-app_test
 ```
 
 ## Tests
@@ -64,7 +64,7 @@ You can read more about it on the [CLI Overview](https://blitzjs.com/docs/cli-ov
 Here is the starting structure of your app.
 
 ```
-app-test
+blitz-tutorial-app
 ├── app/
 │   ├── api/
 │   ├── auth/

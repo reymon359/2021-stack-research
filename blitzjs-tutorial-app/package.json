@@ -1,7 +1,8 @@
 {
-  "name": "app-test",
+  "name": "blitz-tutorial-app",
   "version": "1.0.0",
   "scripts": {
+    "predev": "docker-compose up -d && blitz prisma migrate dev",
     "dev": "blitz dev",
     "build": "blitz build",
     "start": "blitz start",
