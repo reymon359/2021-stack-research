@@ -1,3 +1,6 @@
+import BlogPost from 'src/components/BlogPost'
+
+
 export const QUERY = gql`
   query BlogPostsQuery {
     posts {
@@ -18,13 +21,5 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ posts }) => {
-  return posts.map((post) => (
-    <article key={post.id}>
-      <header>
-        <h2>{post.title}</h2>
-      </header>
-      <p>{post.body}</p>
-      <div>Posted at: {post.createdAt}</div>
-    </article>
-  ))
+  return posts.map((post) => <BlogPost key={post.id} post={post} />)
 }
