@@ -1,7 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { Toaster } from '@redwoodjs/web/toast'
 
-const PostsLayout = ({ children }) => {
+const PostsLayout = (props) => {
   return (
     <div className="rw-scaffold">
       <Toaster />
@@ -15,7 +15,7 @@ const PostsLayout = ({ children }) => {
           <div className="rw-button-icon">+</div> New Post
         </Link>
       </header>
-      <main className="rw-main">{children}</main>
+      <main className="rw-main">{props.children}</main>
     </div>
   )
 }

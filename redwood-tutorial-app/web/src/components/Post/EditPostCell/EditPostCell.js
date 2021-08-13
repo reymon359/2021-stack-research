@@ -1,11 +1,10 @@
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
-
 import PostForm from 'src/components/Post/PostForm'
 
 export const QUERY = gql`
-  query EditPostById($id: Int!) {
+  query FindPostById($id: Int!) {
     post: post(id: $id) {
       id
       title
@@ -26,10 +25,6 @@ const UPDATE_POST_MUTATION = gql`
 `
 
 export const Loading = () => <div>Loading...</div>
-
-export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
-)
 
 export const Success = ({ post }) => {
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {

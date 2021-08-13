@@ -80,13 +80,13 @@ const Post = ({ post }) => {
         >
           Edit
         </Link>
-        <button
-          type="button"
+        <a
+          href="#"
           className="rw-button rw-button-red"
           onClick={() => onDeleteClick(post.id)}
         >
           Delete
-        </button>
+        </a>
       </nav>
     </>
   )

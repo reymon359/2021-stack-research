@@ -1,35 +1,33 @@
-import { render } from '@redwoodjs/testing'
+import { render, screen } from '@redwoodjs/testing'
 import { Loading, Empty, Failure, Success } from './BlogPostsCell'
 import { standard } from './BlogPostsCell.mock'
 
 describe('BlogPostsCell', () => {
-  it('renders Loading successfully', () => {
+  test('Loading renders successfully', () => {
     expect(() => {
       render(<Loading />)
     }).not.toThrow()
   })
 
-  it('renders Empty successfully', async () => {
+  test('Empty renders successfully', async () => {
     expect(() => {
       render(<Empty />)
     }).not.toThrow()
   })
 
-  it('renders Failure successfully', async () => {
+  test('Failure renders successfully', async () => {
     expect(() => {
       render(<Failure error={new Error('Oh no')} />)
     }).not.toThrow()
   })
 
-  // When you're ready to test the actual output of your component render
-  // you could test that, for example, certain text is present:
-  //
-  // 1. import { screen } from '@redwoodjs/testing'
-  // 2. Add test: expect(screen.getByText('Hello, world')).toBeInTheDocument()
+  test('Success renders successfully', async () => {
+    const posts = standard().posts
+    render(<Success posts={posts} />)
 
-  it('renders Success successfully', async () => {
-    expect(() => {
-      render(<Success blogPosts={standard().blogPosts} />)
-    }).not.toThrow()
+    expect(screen.getByText(posts[0].title)).toBeInTheDocument()
+    expect(screen.getByText(posts[0].body)).toBeInTheDocument()
+    expect(screen.getByText(posts[1].title)).toBeInTheDocument()
+    expect(screen.getByText(posts[1].body)).toBeInTheDocument()
   })
 })

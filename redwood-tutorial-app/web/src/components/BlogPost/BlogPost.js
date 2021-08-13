@@ -4,11 +4,11 @@ const BlogPost = ({ post }) => {
   return (
     <article>
       <header>
-        <h2>
+        <h2 className="text-xl text-blue-700 font-semibold">
           <Link to={routes.blogPost({ id: post.id })}>{post.title}</Link>
         </h2>
       </header>
-      <div>{post.body}</div>
+      <div className="mt-2 text-gray-900 font-light">{post.body}</div>
     </article>
   )
 }

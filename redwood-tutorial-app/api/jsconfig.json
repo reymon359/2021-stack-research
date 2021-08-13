@@ -1,32 +1,9 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "rootDirs": [
-      "./src",
-      "../.redwood/types/mirror/api/src"
-    ],
+    "baseUrl": ".",
     "paths": {
-      "src/*": [
-        "./src/*",
-        "../.redwood/types/mirror/api/src/*"
-      ],
-      "types/*": ["./types/*"]
-    },
-    "typeRoots": [
-      "../node_modules/@types",
-      "./node_modules/@types"
-    ],
-    "types": ["jest"],
+      "src/*": ["./src/*"]
+    }
   },
-  "include": [
-    "src",
-    "../.redwood/types/includes/all-*",
-    "../.redwood/types/includes/api-*",
-  ]
+  "include": ["src/**/*", "../.redwood/index.d.ts"]
 }

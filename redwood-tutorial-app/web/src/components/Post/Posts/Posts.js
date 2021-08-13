@@ -91,14 +91,14 @@ const PostsList = ({ posts }) => {
                   >
                     Edit
                   </Link>
-                  <button
-                    type="button"
+                  <a
+                    href="#"
                     title={'Delete post ' + post.id}
                     className="rw-button rw-button-small rw-button-red"
                     onClick={() => onDeleteClick(post.id)}
                   >
                     Delete
-                  </button>
+                  </a>
                 </nav>
               </td>
             </tr>
